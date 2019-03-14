@@ -44,10 +44,13 @@ async function main() {
   const guardians = filterGuardians(movies);
   const avengers = filterAvengers(movies);
   const antMan = filterAntMan(movies);
+  // document.getElementById("no").addEventListener("click", printMovies(movies));
+
+
 }
 
 //Función que sirve para imprimir data
-function printMovies (movies){
+function printMovies (movies){;
   const div = document.getElementById('root');
   div.innerHTML = " ";
 
