@@ -2,11 +2,42 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Hackathon peliculas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600i,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="style_icons.css" media="screen">
+    <link rel="icon" href="../images/Infinity_Marvel.png" sizes="228x228">
+    <title>Infinity Marvel</title>
   </head>
   <body>
+    <header id="title" class="title">
+      <div class="head">
+        <nav id="nav1" class="nav1">
+          <ul class="head_menu">
+            <li class="flex_style">
+              <img src="../images/Infinity_Marvel.png" alt="home" class="home">
+            </li>
+            <li class="flex_style letter_style">
+              <span class="head_content">About us</span>
+            </li>
+            <li class="flex_style letter_style">
+              <span class="head_content">Si te gusta compartenos: </span>
+              <span class="icon-facebook icon_color margin_button"></span>
+              <span class="icon-twitter icon_color margin_button"></span>
+              <span class="icon-instagram icon_color margin_button"></span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    <div class="root"></div>
+    <section>
+      <h3>Aqui puedes ver las peliculas del Universo Cinematico de Marvel por orden cronologico de eventos.</h3>
+      <h3>Coloca tu mouse sobre el poster de una pelicula para ver la sinopsis y el año en que salió en el cine.</h3>
+      <h3>Haz click en el poster para ver el trailer.</h3>
+    </section>
+
+    <div class="root" id="root"></div>
 
     <script src="data.js"></script>
     <script src="main.js"></script>

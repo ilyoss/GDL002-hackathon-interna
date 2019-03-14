@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: black;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.title {
+ height: 9.37rem;
+}
+
+.head{
+  padding: 0.31rem;
+  margin: 0 auto;
+  text-align: center;
+  list-style: none;
+  vertical-align: middle;
+}
+
+.head_menu{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0.62rem;
+  margin: 0;
+  margin-bottom: 0.62rem;
+  vertical-align: middle;
+}
+
+.nav1{
+  background-color: rgba(237, 29, 36, 0.411);
+}
+
+.head_content, .icon_color{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.flex_style{
+  padding: 0.62rem;
+}
+
+.home{
+    width: 15.62rem;
+    display: flex;
+    margin-top: 0;
+}
+.home:hover{
+    width: 17rem;
+}
+
+.letter_style{
+  margin-top: 2rem;
+  margin-left: 10rem;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+}
+
+.root {
+  text-align: center;
+  display: block;
+}
+
+.movies{
+  width: 350px;
+  height: 500px;
+  margin: 15px;
+  display: inline-block;
+  position: relative;
+}
+
+.movieBg {
+  height: 100%;
+  background-size: cover;
+}
+
+.movies:hover > div.movieBg{
+  -webkit-filter: brightness(30%);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.movies:hover .movieText{
+  visibility: visible;
+}
+
+.movieText {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  visibility: hidden;
+  padding-top: 5rem;
+  display: inline-block;
+}
+
+.movieTitle {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.moviePlot {
+  font-size: 1.2rem;
+  margin: 0;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.movieYear {
+  font-size: 1.2rem;
+  color: white;
+}

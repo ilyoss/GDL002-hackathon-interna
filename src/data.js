@@ -35,6 +35,8 @@ async function fetchData(fetchURL) {
 async function main() {
   //I wait for the data to be fetched, and after that I organize my data by characters for further use
   const movies = await fetchData(fetchURL);
+  console.log(movies);
+  printMovies(movies);
   //I create arrays for the characters that have more than one movie, so we can classify them
   const thor = filterThor(movies);
   const ironMan = filterIronMan(movies);
@@ -42,6 +44,26 @@ async function main() {
   const guardians = filterGuardians(movies);
   const avengers = filterAvengers(movies);
   const antMan = filterAntMan(movies);
+}
+
+//Función que sirve para imprimir data
+function printMovies (movies){
+  const div = document.getElementById('root');
+  div.innerHTML = " ";
+
+  movies.map((movies) => {
+    let title = movies.Title + " (" + movies.Year + ")"
+    let nameMovies =
+      `<div onclick="" class="movies">
+        <div class="movieBg" style="background-image: url(${movies.Poster});"></div>
+        <div class="movieText">
+          <h3 class="movieTitle"><strong>${title}</strong></h3>
+          <p class="moviePlot">${movies.Plot}</p>
+        </div>
+      </div>`;
+    div.insertAdjacentHTML("beforeend", nameMovies);
+
+  })
 }
 
 function filterThor(movies){
