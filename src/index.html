@@ -10,6 +10,7 @@
     <title>Infinity Marvel</title>
   </head>
   <body>
+    <!--Header section-->
     <header id="title" class="title">
       <div class="head">
         <nav id="nav1" class="nav1">
@@ -21,7 +22,7 @@
               <span class="head_content">About us</span>
             </li>
             <li class="flex_style letter_style">
-              <span class="head_content">Si te gusta compartenos: </span>
+              <span class="head_content">Share if you like the page: </span>
               <span class="icon-facebook icon_color margin_button"></span>
               <span class="icon-twitter icon_color margin_button"></span>
               <span class="icon-instagram icon_color margin_button"></span>
@@ -30,69 +31,49 @@
         </nav>
       </div>
     </header>
-
-    <div class="container" id="container">
-        <article class="welcome_content">
-            <img src="../images/Infinity_Marvel.png" alt="home" class="img_content">
-        </article>
-
-    <section class ="button-yes-or-no">
-        <h2 class="quest">Bienvenid@, ¿conoces el Universo Cinematográfico Marvel (MCU)?</h2>
+    <!-- Section for the question buttons -->
+    <section class ="button-yes-or-no" id="button_options">
+        <h2 class="quest">Welcome! Are you familiar with the Marvel Cinematic Universe(MCU)?</h2>
         <div class="button-yes">
             <button class="yes" type="submit">Si</button>
-            <button class="no" id="no"type="submit">No</button>
+            <button class="no" id="no" type="submit">No</button>
         </div>
     </section>
-
+    <!-- Section for the marvel universe information, displays the movie list -->
     <section id="marvel_universe" class="answer_no">
-        <div class="marvel_universe">
-        <h2 class="quest">¿Qué es el MCU?</h2>
-        <img class="irc_mi" src="https://media1.tenor.com/images/a197210a323e13f57eb9c86b1709f25f/tenor.gif" onload="typeof google==='object'&amp; &amp;google.aft&amp; &amp;google.aft(this)">
+      <div class="marvel_universe">
+        <h2 class="quest">What is the MCU?</h2>
+        <!-- <img class="irc_mi" src="https://media1.tenor.com/images/a197210a323e13f57eb9c86b1709f25f/tenor.gif" onload="typeof google==='object'&amp; &amp;google.aft&amp; &amp;google.aft(this)"> -->
         <p class="info_content"> El universo Marvel se ha vuelto un tanto popular por sus adaptaciones
-            cinematogràficas, sin embargo la leyenda comenzó desde hace más de 30 años y los cómics tienen
-        diferencias a lo que vemos en la pantalla grande. <br> Marvel ha creado múltiples historias y universos
-    paralelos a su historia más popular, conocida como Tierra-616 y en el aparecen los personajes que la mayoría
-    conoce: Capitán América, Spider-Man, Iron Man, Dr. Strange, Daredevil, Thor, Hulk, Los 4 fantásticos,
-    Nick Fury (director de SHIELD), los X-Men y así como los Avengers.</p>
-    <p class="info_content">Para entender mejor este universo te ponemos la cronología de tiempo con las películas
-        para que puedas entender el desarrollo de este mundo cinematográfico.</p>
-    </div>
-    <!-- <div class="slideshow" id="slideshow">
-            <a id="prev">‹</a>
-            <a href="#modal_video" class="video_content"><img src="http://es.web.img2.acsta.net/r_1280_720/medias/nmedia/18/84/79/82/20099009.jpg" alt="first" class="carousel"></a>
-            <div id="modal_video" class="modal_container">
-                <div id="container_video" class="container_video">
-                    <a  href="#marvel_universe" class="color_button"><span class="icon-squared-cross"></span></a>
-                    <iframe width="760" height="350" src="https://www.youtube.com/embed/JnL7sjclx8k?start=7"
-                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen class="video_trailer"></iframe>
-                </div>
-            </div>
-            <img src="http://es.web.img3.acsta.net/c_215_290/pictures/19/02/05/12/55/5474956.jpg" alt="" class="carousel">
-            <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Ironmanposter.JPG" alt="" class="carousel">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/51RPKjx2EJL._SY445_.jpg" alt="" class="carousel">
-            <img src="https://imagessl9.casadellibro.com/m/ig/9/1303009.jpg" alt="" class="carousel">
-            <img src="https://upload.wikimedia.org/wikipedia/en/f/fc/Thor_poster.jpg" alt="" class="carousel">
-            <img src="https://cdn.europosters.eu/image/1300/posters/avengers-one-sheet-i12720.jpg" alt="" class="carousel">
-            <a id="next">›</a>
-            <span class="caption"></span>
-            <span class="caption"></span>
-            <span class="caption"></span>
-            <span class="caption"></span>
-    </div> -->
-
+          cinematogràficas, sin embargo la leyenda comenzó desde hace más de 30 años y los cómics tienen
+          diferencias a lo que vemos en la pantalla grande. <br> Marvel ha creado múltiples historias y universos
+          paralelos a su historia más popular, conocida como Tierra-616 y en el aparecen los personajes que la mayoría
+          conoce: Capitán América, Spider-Man, Iron Man, Dr. Strange, Daredevil, Thor, Hulk, Los 4 fantásticos,
+          Nick Fury (director de SHIELD), los X-Men y así como los Avengers.</p>
+        <p class="info_content">Para entender mejor este universo te ponemos la cronología de tiempo con las películas
+          para que puedas entender el desarrollo de este mundo cinematográfico.</p>
+      </div>
+    <!-- Div in which we paste all the movie formats generated in data.js -->
     <div class="root" id="root"></div>
     </section>
 
+    <img src="../images/background_marvel.png" alt="background" class="background_marvel"></img>
+
+    <div class="movies">
+
+      <div class="movieBg" style="background-image: url(${movies.Poster});"><a href="#modal_video" class="video_content"></a></div>
+      <div class="movieText">
+        <h3 class="movieTitle"><strong>${title}</strong></h3>
+        <p class="moviePlot">${movies.Plot}</p>
+      </div>
+    </div>
 
 
-    <img src="../images/background_marvel.png" alt="background" class="background_marvel">
-  </div>
-
-    <footer class="footer_content">
-    </footer>
 
 
+    <footer class="footer_content"></footer>
+
+    <!-- Calling our javascript files for use -->
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>

@@ -192,67 +192,10 @@ h3 {
 }
 .info_content{
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: justify;
     margin: 2rem;
 }
-
-#slideshow {
-    -ms-flex-item-align: center;
-    align-self: center;
-    margin: 0px auto;
-    border: 10px solid #B2DFDB;
-    padding: 0;
-    border-radius: 0.6rem;
-    position: relative;
-    background-color: #f8f2dc;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: column wrap;
-    flex-flow: column wrap;
-    max-width: 28rem;
-    height: auto;
-    -webkit-box-shadow: 0 2px 2px rgb(87, 124, 123);
-    box-shadow: 0 2px 2px rgb(87, 124, 123);
-    overflow: hidden;
-
-   }
-
-   #prev,
-   #next {
-    cursor: pointer;
-    width: 10px;
-    z-index: 9999;
-    color: black;
-    position: absolute;
-    margin-top: -60px;
-    top: 50%;
-    font-size: 30px;
-    padding: 10px;
-    background-color: #f8f2dc;
-    font-weight: bold;
-   }
-
-   #prev {
-    border-radius: 0 60px 60px 0;
-    left: -5px;
-   }
-
-   #next {
-    border-radius: 60px 0 0 60px;
-    right: -5px;
-   }
-
-   .caption {
-    text-align: center;
-    text-transform: uppercase;
-    padding: 10px;
-    display: none;
-    width: 100%;
-   }
 
    /*-----Main------*/
    p,
@@ -286,4 +229,34 @@ h3 {
    }
    .color_button{
        color: white;
+   }
+
+   .answer_no{
+       display: none;
+   }
+
+   .container_video{
+    background-color:black;
+    width:750px;
+    padding: 0.70rem 1.25rem;
+    margin: 10% auto;
+    position: relative;
+    display: block;
+    border-width: 15px;
+    border-color: whitesmoke;
+   }
+   .modal_container{
+    background-color: rgba(0,0,0,.8);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+   }
+   #modal_video:target{
+    opacity:1;
+    pointer-events:auto;
    }

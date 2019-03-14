@@ -7,10 +7,16 @@ const fetchURL = urlGen(moviesIMDB);
 function urlGen(moviesIMDB){
   const fetchURL = [];
   for(i = 0; i < moviesIMDB.length; i++){
-    fetchURL[i] = 'http://www.omdbapi.com/?i=' + moviesIMDB[i] + '&apikey=69ecdec';
+    fetchURL[i] = 'https://www.omdbapi.com/?i=' + moviesIMDB[i] + '&apikey=69ecdec';
   }
   return fetchURL;
 }
+//Array of movie trailers
+const movieTrailers = ["https://www.youtube.com/embed/JerVrbLldXw", "https://www.youtube.com/embed/Z1BCujX3pw8", "https://www.youtube.com/embed/8hYlB38asDY", "https://www.youtube.com/embed/BoohRoVA9WQ", "https://www.youtube.com/embed/xbqNb2PFKKA",
+"https://www.youtube.com/embed/JOddp-nlNvQ", "https://www.youtube.com/embed/eOrNdBpGMv8", "https://www.youtube.com/embed/oYSD2VQagc4", "https://www.youtube.com/embed/npvJ9FTgZbM", "https://www.youtube.com/embed/tbayiPxkUMM",
+"https://www.youtube.com/embed/d96cjJhvlMA", "https://www.youtube.com/embed/dW1BIid8Osg", "https://www.youtube.com/embed/tmeOjFno6Do", "https://www.youtube.com/embed/pWdKf3MneyI", "https://www.youtube.com/embed/FkTybqcX-Yo",
+"https://www.youtube.com/embed/xjDjIWPwcPU", "https://www.youtube.com/embed/n9DwoQ7HWvI", "https://www.youtube.com/embed/8_rTIAOohas", "https://www.youtube.com/embed/HSzx-zryEgM", "https://www.youtube.com/embed/ue80QwXMRHg",
+"https://www.youtube.com/embed/6ZfuNTqbHE8"];
 
 main();
 
@@ -34,8 +40,8 @@ async function fetchData(fetchURL) {
 //Main function is async as well, because here I run the fetching first and then the rest
 async function main() {
   //I wait for the data to be fetched, and after that I organize my data by characters for further use
-  const movies = await fetchData(fetchURL);
-  console.log(movies);
+  let movies = await fetchData(fetchURL);
+  movies = addLinks(movies, movieTrailers);
   printMovies(movies);
   //I create arrays for the characters that have more than one movie, so we can classify them
   const thor = filterThor(movies);
@@ -45,8 +51,13 @@ async function main() {
   const avengers = filterAvengers(movies);
   const antMan = filterAntMan(movies);
   // document.getElementById("no").addEventListener("click", printMovies(movies));
-
-
+}
+//Function to add the URL links of the youtube trailers to each movie object
+function addLinks(movies, movieTrailers){
+  for(let i = 0; i < movies.length; i++){
+    movies[i].URL = movieTrailers[i];
+  }
+  return movies;
 }
 
 //Función que sirve para imprimir data
@@ -57,8 +68,18 @@ function printMovies (movies){;
   movies.map((movies) => {
     let title = movies.Title + " (" + movies.Year + ")"
     let nameMovies =
-      `<div onclick="" class="movies">
-        <div class="movieBg" style="background-image: url(${movies.Poster});"></div>
+      `<div class="movies">
+
+      <div id="modal_video" class="modal_container">
+          <div id="container_video" class="container_video">
+              <a href="#marvel_universe" class="color_button"><span class="icon-squared-cross"></span></a>
+              <iframe width="760" height="350" src="${movies.URL}"
+              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen class="video_trailer"></iframe>
+          </div>
+      </div>
+
+        <div class="movieBg" style="background-image: url(${movies.Poster});"><a href="#modal_video" class="video_content"></a></div>
         <div class="movieText">
           <h3 class="movieTitle"><strong>${title}</strong></h3>
           <p class="moviePlot">${movies.Plot}</p>
