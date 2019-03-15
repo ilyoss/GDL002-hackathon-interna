@@ -1,64 +1,68 @@
-# "Hackathon" de final de _Common Core_, películas
+INFINITY MARVEL
+enter image description here
 
-## Índice
+Planteamiento:
+INFINITY MARVEL es una aplicación que está dirigida a personas entre 15 y 40 años que lean comics, les interese el mundo cinematográfico de Marvel; pero a su vez para público en general que no sean fan de Marvel y hayan visto por lo menos una película o les interese adentrarse en este mundo de ciencia ficción, pues mostrará cronológicamente la forma en la que debes ir viendo las películas para poder entender las historias y el seguimiento de las mismas.
+Este apartado muestra una breve descripción en un video del orden cronológico del seguimiento de las películas con la intención que si el usuario no tiene mucho conocimiento pueda adentrarse y utilizar este como filtro para llegar a poder ver los trailers o incluso las películas.
+Del mismo modo se mostrará un dato icónico de cada persona para que sea de ayuda para poder identificarlos.
 
-- [Preámbulo](#preámbulo)
-- [Resumen del proyecto](#resumen-del-proyecto)
-- [Consideraciones generales](#consideraciones-generales)
-- [Objetivos de aprendizaje](#objetivos-de-aprendizaje)
-- [Parte obligatoria](#parte-obligatoria)
-- [Consideraciones técnicas](#consideraciones-técnicas)
+Sección de prototipado:
+Baja fidelidad
+enter image description here
+enter image description here
 
----
+Alta fidelidad
+enter image description here
+https://www.figma.com/proto/VU6FuV2OHiGbg9Y5FIXO1hXc/Untitled?node-id=2%3A0&scaling=scale-down## Historias de usuario:
 
-## Preámbulo
+El usuario ingresará a la aplicación de forma amigable y explicativa y podrá acceder según sea su interés o conocimiento al apartado de categoría por super héroes o bien a la parte de la línea del tiempo donde está ordenado de forma cronológica el seguimiento de las películas.
 
-Con la aparición de plataformas para ver películas en la nube, como Netflix o
-Amazon Prime Video, ver películas desde donde estés, comiendo lo que quieras
-(sin tener que pagar precios ridículos por palomitas), parando si es necesario, teniendo acceso a una cantidad
-abrumadora de películas... ha cambiado la experiencia del usuario
-y modificado el mercado de las películas a nivel global.
+El usuario necesita botones para dar opción de conocer el Mundo Marvel o para ir a ver películas de un super héroe en específico.
 
-![Pelis](https://media.giphy.com/media/NipFetnQOuKhW/giphy.gif)
+-DoD: Generar el prototipo de baja fidelidad.
+-DoD: Generar el esqueleto de las pantallas.
+-DoD: Delimitar el tema y usuario objetivo.
+-DoD: Delimitar las 21 películas y hacer fetch.
+-DoD: Añadir botones y definir botones de las interfaces.
+-DoD: Elegir el nombre de la Aplicación.
+-DoD: Generar el prototipo de alta fidelidad.
+Si el usuario no conoce despliega pantalla con información del mundo marvel y cronología de películas. Al darle click a la imagen puedo abrir el video del trailer mostrados en un modal.
 
-## Resumen del proyecto
+-DoD: Añadir una nueva pantalla que muestre una breve descripción con la conexión entre películas.
+-DoD: Desplegar sobreponiendo el video de trailer de la película seleccionada.
+-DoD: Añadir una línea del tiempo con cards del orden de las películas.
+-DoD: Generar un hoover que al posicionarte en la card te muestre la sinopsis de la película.
+-DoD: Ejecutar que los botones tengan interacción con el js para que cumplan una acción.
+Si el usuario si conoce Marvel se despliega una pantalla para elegir un super héroe en particular con todas las películas que le correspondan a ese personaje.
 
-Durante estos días crearás el producto que quieras alrededor del mundo
-de las películas. Puede ser un sitio que hable de las mejores películas
-latinoamericanas, uno que recomiende las películas recién estrenadas en algún servicio de streaming, uno de recomendaciones de películas de terror,
-comedia ... o... ¡lo que quieran!
+-DoD: Buscar y descargar los iconos representativos de las imagenes del super héroe a elegir.
+-DoD: Poner un enlace para los videos que muestre el video del trailer encima de la info.
+-DoD:Crear un botón para que te lleve a ver la película.
+Al dar click a un super héroe como usuario puedo ver el enlace de las películas de ese super héroe.
 
-## Consideraciones generales
+-DoD: Hacer una nueva interfaz que muestre el logo representativo del super héroe seleccionado.
+-DoD: Generar un modal para que sobreponga el video del trailer de la película.
+-DoD: Hacer un link o botón que te redireccione a la película.
+Quien utiliza INFINITY MARVEL:
+Hombres y mujeres mayores de 15 años que les agrade adentrarse en el mundo Marvel o que en su defecto sean fan de películas, series e incluso comics, pero a su vez también personas que no conozcan del tema pero tengan la inquietud de ver en orden las películas y conocer la historia de los super héroes.
+El usuario utiliza mayormente la versión de ipad o incluso laptop ya que en estos dispositivos es mucho más fácil ver las películas, sin embargo la aplicación es responsive por lo que la versión móvil también podrá utilizarse.
 
-- Este proyecto se debe resolver en equipos de hasta 4 personas y uno de 3.
-- Usa la API de [OMDB](http://www.omdbapi.com/) (The Open Movie Database).
-- Tiempo para completar el reto: 3 días.
-- Habrán dos presentaciones, una a la mitad de la _hackathon_ y otra al final.
+Especificaciones técnicas:
+La aplicación utiliza una base de datos que fue extraída de OMDB API, se toma como rango las 21 películas de Marvel, se realizó un fetch y se obtuvo una API Key para poder extraer la data, enseguida se hizo un for. Así mismo se generaron las funciones para poder acceder a las propiedades de un objeto dentro de un arreglo y se hizo filtros para las películas de cada super héroe.
 
-## Objetivos de aprendizaje
+Pasos para hacer uso de la aplicación:
+El usuario puede entrar a la aplicación y encontrar dos botones que te guiarán dependiendo de lo que el usuario quiera, ya sea ir al apartado de la línea del tiempo en el universo marvel, ver el video del intro para darse una idea de los personajes si es un usuario nuevo en el mundo marvel.
+A su vez puede ingresar a la parte de héroes donde podrá elegir el que sea de su agrado y lo mandará a una página donde viene más información de cada personaje, de sus comics e incluso novedades del super héroe en acción.
+Del mismo modo el usuario puede irse al “About us” y con esto conocer más la página.
+El usuario puede navegar a través de la aplicación y ver los trailers de cada película para darse una idea de la historia y si es de su agrado poder ver posteriormente la película.
+Indicadores de OMDb API - The Open Movie Data:
+Es una plataforma que tiene data de películas que permite bajarla de la web para hacer uso de ella. Obtuvimos los id de cada película de Marvel (nuestro tema delimitado) y de forma manual se añadieron a un arreglo de forma cronológica.
 
-- Enfrentarte a un reto de corta duración en el que pongas
-  en práctica todo lo aprendido hasta ahora.
-- Que sigas desarrollando tus habilidades de trabajo en equipo. Mientras más
-  personas en un equipo de trabajo, mayor complejidad para: tener un
-  entendimiento común, seguir el flujo de trabajo, buscar consensos, etc.
+Interacción de interfaces
+La aplicación contará con distintos filtros para visualizar la información tales como;
 
-## Parte Obligatoria
-
-- Todo el planeamiento del trabajo deberá ser detallado en un repositorio único
-  por _squad_ en el que se presente el _planning_, el _research_, los _sketches_
-  y las inspiraciones utilizadas para definir el producto.
-- Además, deberás detallar en el archivo _readme_, qué hizo cada una en el
-  proyecto.
-- El producto deberá presentarse publicado en github pages.
-
-## Consideraciones técnicas
-
-- El diseño visual de los componentes es de libre elección.
-- Pueden usar algún framework de css si así lo deciden.
-
-## Sobre las presentaciones
-
-- Cada squad tendrá 5 minutos para presentar y 5 minutos para recibir preguntas.
-
-- Las personas que presentan en la primera presentación no deben ser las mismas de la presentación final.
+Pantalla de inicio mostrará el logo y nombre de la aplicación, botones para ir hacia los super héroes o a la historia de Marvel, así como un About us que llevará al usuario a conocernos mejor.
+En la pantalla de la historia de Marvel le mostrará al usuario un video explicando más acerca de Marvel y el orden cronológico de las películas y después estarán acomodadas las películas con su poster con un hover que muestra la sinopsis y el año en que salió la película.
+Al darle click a alguna de ellas te mostrará un modal en el que se visualizará un video del trailer de la película.
+Al darle click al botón de Héroes te mostrará la imagen de cada super héroe en el cual podrá el usuario de nueva cuenta darle click al personaje que desee ver y dentro estarán las películas filtradas de dicho super héroe.
+Markdown selection 28 bytes 4 words 0 lines Ln 16, Col 30 HTML 5071 characters 1063 words 50 paragraphs
