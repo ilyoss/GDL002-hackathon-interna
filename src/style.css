@@ -292,9 +292,6 @@ h3 {
   padding: 2rem;
 }
 
-.characters {
-}
-
 .horizontalCard {
   width: 20rem;
   height: 15rem;
@@ -462,41 +459,47 @@ figure:hover figcaption {
 }
 
 @media screen and (max-width: 64rem) and (min-width: 48.75rem){
-    .title, .nav1{
-        height: 7rem;
-    }
-    .home {
-        margin-top: -1rem;
-    }
-    .letter_style{
-        margin-left: 4rem;
-    }
-    .yes, .no {
-        margin-left: 14.5rem;
-    }
+  .title, .nav1{
+    height: 7rem;
+  }
+  .home {
+    margin-top: -1rem;
+  }
+  .letter_style{
+    margin-left: 4rem;
+  }
+  .yes, .no {
+    margin-left: 14.5rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 48.75rem) and (min-width: 30rem){
- .title, .nav1{
-     height: 6rem;
- }
- .home {
-     width: 13rem;
-     margin-top: -1rem;
- }
- .letter_style{
-     margin-left: 2rem;
- }
- .head_content{
-     font-size: 1rem;
- }
- .yes, .no {
-     margin-left: 9rem;
- }
- .head_content:hover{
-     font-size: 1.3rem;
- }
- .infoAboutUs1, .infoAboutUs2{
-     font-size: 1.5rem;
- }
+  .title, .nav1{
+    height: 6rem;
+  }
+  .home {
+    width: 13rem;
+    margin-top: -1rem;
+  }
+  .letter_style{
+    margin-left: 2rem;
+  }
+  .head_content{
+    font-size: 1rem;
+  }
+  .yes, .no {
+    margin-left: 9rem;
+  }
+  .head_content:hover{
+    font-size: 1.3rem;
+  }
+  .infoAboutUs1, .infoAboutUs2{
+    font-size: 1.5rem;
+  }
+  .text {
+    font-size: 0.5rem;
+  }
 }
