@@ -7,71 +7,138 @@
     <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     <link rel="stylesheet" type="text/css" href="style_icons.css" media="screen">
     <link rel="icon" href="../images/Infinity_Marvel.png" sizes="228x228">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <title>Infinity Marvel</title>
   </head>
   <body>
     <!--Header section-->
     <header id="title" class="title">
-      <div class="head">
-        <nav id="nav1" class="nav1">
-          <ul class="head_menu">
-            <li class="flex_style">
-              <img src="../images/Infinity_Marvel.png" alt="home" class="home">
-            </li>
-            <li class="flex_style letter_style">
-              <span class="head_content">About us</span>
-            </li>
-            <li class="flex_style letter_style">
-              <span class="head_content">Share if you like the page: </span>
-              <span class="icon-facebook icon_color margin_button"></span>
-              <span class="icon-twitter icon_color margin_button"></span>
-              <span class="icon-instagram icon_color margin_button"></span>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <nav id="nav1" class="nav1">
+        <ul class="head_menu">
+          <li class="flex_style">
+            <img src="../images/Infinity_Marvel.png" alt="home" id="home" class="home">
+          </li>
+          <li class="flex_style letter_style">
+            <span id="about_us" class="head_content">About us</span>
+          </li>
+          <li class="flex_style letter_style">
+            <span class="head_content">Share if you like the page: </span>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.facebook.com/TioMarvelpeliculas/" target="_blank" class="share"><span class="icon-facebook icon_color margin_button"></span></a>
+            <a href="https://twitter.com/home?status=%40Marvel%0A" target="_blank" class="share"><span class="icon-twitter icon_color margin_button"></span></a>
+            <a href="https://plus.google.com/share?url=https%3A//www.instagram.com/Marvel/?hl=es-la" target="_blank" class="share"><span class="icon-instagram icon_color margin_button"></span></a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <!-- Section for the question buttons -->
-    <section class ="button-yes-or-no" id="button_options">
-        <h2 class="quest">Welcome! Are you familiar with the Marvel Cinematic Universe(MCU)?</h2>
-        <div class="button-yes">
-            <button class="yes" type="submit">Si</button>
-            <button class="no" id="no" type="submit">No</button>
+
+    <!-- Starting screen section -->
+    <section class="welcome_content" id="welcome_content">
+        <h2 class="topHeaders">Welcome!</h2>
+        <img class="mcuGif" src="https://media1.tenor.com/images/a197210a323e13f57eb9c86b1709f25f/tenor.gif">
+        <p class="text">How would you like to meet the Marvel Universe?</p>
+        <div class="buttons">
+          <button id="heroes" class="button" type="submit">Heroes</button>
+          <div class="divider"></div>
+          <button id="history" class="button" type="submit">History</button>
         </div>
+        <img src="../images/background_marvel.png" alt="background" class="background_marvel"></img>
     </section>
+
     <!-- Section for the marvel universe information, displays the movie list -->
-    <section id="marvel_universe" class="answer_no">
-      <div class="marvel_universe">
-        <h2 class="quest">What is the MCU?</h2>
-        <!-- <img class="irc_mi" src="https://media1.tenor.com/images/a197210a323e13f57eb9c86b1709f25f/tenor.gif" onload="typeof google==='object'&amp; &amp;google.aft&amp; &amp;google.aft(this)"> -->
-        <p class="info_content"> El universo Marvel se ha vuelto un tanto popular por sus adaptaciones
-          cinematogràficas, sin embargo la leyenda comenzó desde hace más de 30 años y los cómics tienen
-          diferencias a lo que vemos en la pantalla grande. <br> Marvel ha creado múltiples historias y universos
-          paralelos a su historia más popular, conocida como Tierra-616 y en el aparecen los personajes que la mayoría
-          conoce: Capitán América, Spider-Man, Iron Man, Dr. Strange, Daredevil, Thor, Hulk, Los 4 fantásticos,
-          Nick Fury (director de SHIELD), los X-Men y así como los Avengers.</p>
-        <p class="info_content">Para entender mejor este universo te ponemos la cronología de tiempo con las películas
-          para que puedas entender el desarrollo de este mundo cinematográfico.</p>
+    <section id="marvel_universe" class="history">
+      <h2 class="topHeaders">History about MCU</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/peOWYBGuUFs?start=26" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+      <p class="text">Here you will find all the movies from Marvel's Cinematic Universe by chronological order of events.</p>
+      <p class="text">Put your mouse over a movie poster to display the plot, and click on it to watch the trailer.</p>
+
+      <!-- Div in which we paste all the movie formats generated in data.js -->
+      <div class="root" id="root"></div>
+
+      <!-- Trailer Video Modal -->
+      <div id="modal_video" class="modal_container">
+        <div id="container_video" class="container_video">
+          <a  href="#close" class="color_button"><span class="icon-squared-cross"></span></a>
+          <div class="scale-media" id="trailer-video-container"></div>
+        </div>
       </div>
-    <!-- Div in which we paste all the movie formats generated in data.js -->
-    <div class="root" id="root"></div>
     </section>
 
-    <img src="../images/background_marvel.png" alt="background" class="background_marvel"></img>
+    <section id="marvel_heroes" class="heroes">
+      <h2 class="topHeaders">Marvel's Cinematic Universe characters</h2>
+      <p class="text">Get hooked on a hearty helping of heroes! Put your mouse over a character or group to know its name. Click on it to learn about their movies, comics and more!</p>
 
-    <div class="movies">
+      <div class="characters">
+        <figure onclick="window.open('https://www.marvel.com/characters/captain-america-steve-rogers')">
+          <img src="http://pngimg.com/uploads/captain_america/captain_america_PNG91.png" alt="">
+          <figcaption><strong>Captain America</strong><br>“You can't justify murder by masking it with a cause.”</figcaption>
+        </figure>
 
-      <div class="movieBg" style="background-image: url(${movies.Poster});"><a href="#modal_video" class="video_content"></a></div>
-      <div class="movieText">
-        <h3 class="movieTitle"><strong>${title}</strong></h3>
-        <p class="moviePlot">${movies.Plot}</p>
+        <figure class="horizontalCard" onclick="window.open('https://www.marvel.com/teams-and-groups/avengers')">
+          <img src="http://www.pngall.com/wp-content/uploads/2016/04/Avengers-Free-Download-PNG.png" alt="">
+          <figcaption>"<strong>Avengers</strong> assemble!"</figcaption>
+        </figure>
+
+        <figure onclick="window.open('https://www.marvel.com/characters/thor-thor-odinson')">
+          <img src="http://pluspng.com/img-png/thor-hd-png-thor-png-transparent-image-790.png" alt="">
+          <figcaption><strong>Thor </strong><br>"For Asgard!"</figcaption>
+        </figure>
+
+        <figure onclick="window.open('https://www.marvel.com/characters/iron-man-tony-stark')">
+            <img src="http://pngimg.com/uploads/ironman/ironman_PNG44.png" alt="">
+            <figcaption><strong>Iron Man</strong><br>“Following's not really my style.”</figcaption>
+        </figure>
+
+        <figure class="horizontalCard" onclick="window.open('https://www.marvel.com/movies/guardians-of-the-galaxy')">
+          <img src="http://www.pngmart.com/files/3/Guardians-of-The-Galaxy-PNG-Photos.png" alt="">
+          <figcaption><strong>Guardians of the Galaxy</strong><br>“I have lived most of my life surrounded by my enemies. I would be grateful to die surrounded by my friends.” – Gamora</figcaption>
+        </figure>
+
+        <figure onclick="window.open('https://www.marvel.com/characters/ant-man-scott-lang')">
+          <img src="http://www.pngall.com/wp-content/uploads/2016/05/Ant-Man-Free-PNG-Image.png" alt="">
+          <figcaption><strong>Ant Man</strong><br>"I'm gonna have to shrink between the molecules to get in there."</figcaption>
+        </figure>
+
+        <figure onclick="window.open('https://www.marvel.com/characters/captain-marvel-carol-danvers')">
+          <img src="https://vignette.wikia.nocookie.net/p__/images/4/4d/Captain_Marvel_Render.png/revision/latest/scale-to-width-down/480?cb=20190306213828&path-prefix=protagonist" alt="">
+          <figcaption><strong>Captain Marvel</strong><br>"Something in my past is the key to all of this."</figcaption>
+        </figure>
+
+        <figure onclick="window.open('https://www.marvel.com/characters/black-panther-t-challa')">
+          <img src="https://4.bp.blogspot.com/-EM9BTX0wC1c/V1INLzA28UI/AAAAAAAAEEo/bv3CrZHqO6oEJUKCAvWW3WR1lyPgNPA1wCLcB/s1600/black_panther___transparent_background__by_camo_flauge-d9zgpl6.png" alt="">
+          <figcaption><strong>Black Panther</strong><br>“You’re telling me that the king of a Third World country runs around in a bulletproof catsuit?”</figcaption>
+        </figure>
+
+        <figure onclick="window.open('https://www.marvel.com/characters/doctor-strange-stephen-strange')">
+          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1dbc1935-6542-4ee3-822f-135cff4ba62c/db405fp-7cd4c3b0-29ca-496b-9e2a-5750fa1cae30.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFkYmMxOTM1LTY1NDItNGVlMy04MjJmLTEzNWNmZjRiYTYyY1wvZGI0MDVmcC03Y2Q0YzNiMC0yOWNhLTQ5NmItOWUyYS01NzUwZmExY2FlMzAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.IrwVEo3PujX5H87CEYHoa0nGyXz0rhkx6YflyYgA9AU" alt="">
+          <figcaption><strong>Doctor Strange</strong><br>"Death is what gives life meaning. To know your days are numbered. Your time is short."</figcaption>
+        </figure>
+
+        <figure class="horizontalCard" onclick="window.open('https://www.marvel.com/characters/spider-man-peter-parker')">
+          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3e14c32b-9b73-4351-b998-4ba095539837/dbv28py-50a15c75-7225-4467-aced-6408277eed84.png/v1/fill/w_1010,h_792,strp/infinity_war_spider_man_png_by_stark3879_dbv28py-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODAzIiwicGF0aCI6IlwvZlwvM2UxNGMzMmItOWI3My00MzUxLWI5OTgtNGJhMDk1NTM5ODM3XC9kYnYyOHB5LTUwYTE1Yzc1LTcyMjUtNDQ2Ny1hY2VkLTY0MDgyNzdlZWQ4NC5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.humgAtqtVaZQXEnL0_r5jUJv9l7PqAHDhG0MnhWQF_o" alt="">
+          <figcaption><strong>Spiderman</strong><br>"Whatever life holds in store for me, I will never forget these words: "With great power, comes great responsibility." This is my gift, my curse. Who am I? I'm Spiderman."</figcaption>
+        </figure>
+
       </div>
-    </div>
+
+      <!-- Div in which we paste all the movie formats generated in data.js -->
+      <div class="root" id="characterMovies"></div>
+
+    </section>
 
 
+    <!-- Section with the information from about us -->
+    <section id="aboutUsPage" class="infoAboutUs">
+        <span class="title_about"><strong>About us</strong></span>
+        <p class="infoAboutUs1">Infinity Marvel was created with the purpose of being a website that provides information and data of the Marvel Cinematic Universe.</p><br>
+        <img src="http://www.lovethisgif.com/uploaded_images/20833-Cia-Dos-Gifs-Capit-o-America.gif">
+        <p class="infoAboutUs2">We want to be a community where you all can watch, read and collaborate with everything that may be important to know about this Universe.</p>
+           <p class="infoFeel"><br><strong>Feel welcome to be part and belong to this commnity!</strong></p>
+        <img src="https://media1.tenor.com/images/e2aff7e167ab500a4837493b4dbd9228/tenor.gif?">
 
+    </section>
 
-    <footer class="footer_content"></footer>
+    <!-- <footer class="footer_content"></footer> -->
 
     <!-- Calling our javascript files for use -->
     <script src="data.js"></script>

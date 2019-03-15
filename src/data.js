@@ -52,6 +52,7 @@ async function main() {
   const antMan = filterAntMan(movies);
   // document.getElementById("no").addEventListener("click", printMovies(movies));
 }
+
 //Function to add the URL links of the youtube trailers to each movie object
 function addLinks(movies, movieTrailers){
   for(let i = 0; i < movies.length; i++){
@@ -62,33 +63,37 @@ function addLinks(movies, movieTrailers){
 
 //Función que sirve para imprimir data
 function printMovies (movies){;
-  const div = document.getElementById('root');
+  let div = document.getElementById('root');
   div.innerHTML = " ";
 
   movies.map((movies) => {
     let title = movies.Title + " (" + movies.Year + ")"
     let nameMovies =
       `<div class="movies">
-
-      <div id="modal_video" class="modal_container">
-          <div id="container_video" class="container_video">
-              <a href="#marvel_universe" class="color_button"><span class="icon-squared-cross"></span></a>
-              <iframe width="760" height="350" src="${movies.URL}"
-              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen class="video_trailer"></iframe>
-          </div>
-      </div>
-
-        <div class="movieBg" style="background-image: url(${movies.Poster});"><a href="#modal_video" class="video_content"></a></div>
+        <a href="#modal_video" class="video_content"  data-trailer-youtube-id="${movies.URL}">
+        <div class="movieBg" style="background-image:url(${movies.Poster});"></div>
         <div class="movieText">
           <h3 class="movieTitle"><strong>${title}</strong></h3>
           <p class="moviePlot">${movies.Plot}</p>
         </div>
+        </a>
+
       </div>`;
     div.insertAdjacentHTML("beforeend", nameMovies);
-
   })
 }
+// Start playing the video whenever the trailer modal is opened
+$(document).on('click', '.video_content', function (event) {
+   let trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+   let sourceUrl = trailerYouTubeId;
+   console.log(trailerYouTubeId);
+   $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+     'id': 'trailer-video',
+     'type': 'text-html',
+     'src': sourceUrl,
+     'frameborder': 0
+   }));
+});
 
 function filterThor(movies){
   const thor = [];
@@ -155,5 +160,15 @@ function filterAntMan(movies){
   }
   return antMan;
 }
+
+// <div id="modal_video" class="modal_container">
+//     <div id="container_video" class="container_video">
+//         <a href="#marvel_universe" class="color_button"><span class="icon-squared-cross"></span></a>
+//         <iframe width="760" height="350" src=${movies.URL}
+//         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+//         allowfullscreen class="video_trailer"></iframe>
+//     </div>
+// </div>
+
 
 //Thor, Iron man, Cap America, Guardians, Avengers, Ant man - Hulk, Black panther, Dr Strange, Spiderman, Captain marvel
