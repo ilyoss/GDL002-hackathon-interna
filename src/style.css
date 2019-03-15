@@ -100,9 +100,9 @@ h3 {
 }
 
 .movies{
-  width: 350px;
-  height: 500px;
-  margin: 15px;
+  width: 22rem;
+  height: 31rem;
+  margin: 1rem;
   display: flex;
   position: relative;
 }
@@ -388,7 +388,7 @@ figure:hover figcaption {
 
 .container_video{
   background-color:black;
-  width:750px;
+  width: 46rem;
   padding: 0.70rem 1.25rem;
   margin: 10% auto;
   position: relative;
@@ -457,7 +457,7 @@ figure:hover figcaption {
    top: 0;
    background-color: white;
 }
-
+/* Media for screens from 1024px max - 780px min*/
 @media screen and (max-width: 64rem) and (min-width: 48.75rem){
   .title, .nav1{
     height: 7rem;
@@ -474,8 +474,35 @@ figure:hover figcaption {
   .text {
     font-size: 1rem;
   }
-}
+  .head_content {
+    font-size: 1rem;
+  }
+  .divider{
+    width: 2rem;
+  }
+  .movies {
+    width: 12rem;
+    height: 18rem;
+    margin: 0.5rem;
+  }
+  .container_video{
+    background-color:black;
+    width: 42rem;
+    padding: 0.70rem 1.25rem;
+    margin: 10% auto;
+    position: relative;
+    display: block;
+    border-width: 15px;
+    border-color: whitesmoke;
+    text-align: right;
+  }
 
+  .title {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+/* Media for screens from 780px max to 480px min */
 @media screen and (max-width: 48.75rem) and (min-width: 30rem){
   .title, .nav1{
     height: 6rem;
@@ -500,6 +527,30 @@ figure:hover figcaption {
     font-size: 1.5rem;
   }
   .text {
-    font-size: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .head_content {
+    font-size: 1rem;
+  }
+  .divider{
+    width: 2rem;
+  }
+
+  .movies {
+    width: 10rem;
+    height: 15rem;
+    margin: 0.5rem;
+  }
+
+  .container_video{
+    background-color:black;
+    width: 28rem;
+    padding: 0.70rem 1.25rem;
+    margin: 10% auto;
+    position: relative;
+    display: block;
+    border-width: 15px;
+    border-color: whitesmoke;
+    text-align: right;
   }
 }
