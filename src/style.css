@@ -94,14 +94,16 @@ h3 {
 
 .root {
   text-align: center;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .movies{
   width: 350px;
   height: 500px;
   margin: 15px;
-  display: inline-block;
+  display: flex;
   position: relative;
 }
 
@@ -110,7 +112,7 @@ h3 {
   background-size: cover;
 }
 
-.movies:hover > div.movieBg{
+.video_content:hover > div.movieBg{
   -webkit-filter: brightness(30%);
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -130,7 +132,6 @@ h3 {
   left: 0px;
   visibility: hidden;
   padding-top: 5rem;
-  display: inline-block;
 }
 
 .movieTitle {
